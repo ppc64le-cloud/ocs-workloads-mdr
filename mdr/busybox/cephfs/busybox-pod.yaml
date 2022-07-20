@@ -17,5 +17,5 @@ spec:
   volumes:
     - name: mypvc
       persistentVolumeClaim:
-        claimName: busybox-pvc
+        claimName: busybox-pvc-cephfs
         readOnly: false
