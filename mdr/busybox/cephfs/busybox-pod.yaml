@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: busybox
+  name: busybox-cephfs
   labels:
     appname: busybox
 spec:
