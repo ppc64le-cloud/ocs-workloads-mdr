@@ -1,21 +1,34 @@
----
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: busybox-cephfs
   labels:
-    appname: busybox
+    appname: busybox-cephfs
+  name: busybox-cephfs
 spec:
-  containers:
-    - name: busybox
-      image: quay.io/vcppds7878/busybox:latest 
-      imagePullPolicy: IfNotPresent
-      command: ['sh', '-c', 'while true; do echo $(date) | tee -a /mnt/test/outfile; sync; sleep 1; done']
-      volumeMounts:
-        - name: mypvc
-          mountPath: /mnt/test
-  volumes:
-    - name: mypvc
-      persistentVolumeClaim:
-        claimName: busybox-pvc-cephfs
-        readOnly: false
+  selector:
+    matchLabels:
+      workload: busybox-cephfs
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        workload: busybox-cephfs
+    spec:
+      containers:
+      - command: ["/bin/sh", "-c"]
+        args:
+          - wget  https://raw.githubusercontent.com/red-hat-storage/ocs-workloads/io-pattern-busybox/rdr/busybox/scripts/simple_io.sh -O /mnt/test/simple_io.sh;
+            chmod +x /mnt/test/simple_io.sh;
+            /mnt/test/simple_io.sh
+        image: quay.io/vcppds7878/busybox:latest
+        imagePullPolicy: IfNotPresent
+        name: busybox-cephfs
+        volumeMounts:
+        - mountPath: /mnt/test
+          name: mypvc
+      volumes:
+      - name: mypvc
+        persistentVolumeClaim:
+          claimName: busybox-cephfs-pvc
+          readOnly: false
