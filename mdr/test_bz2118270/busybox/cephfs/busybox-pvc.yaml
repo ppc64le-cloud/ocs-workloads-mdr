@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: busybox-cephfs-pvc
+  labels:
+    appname: busybox-cephfs
+spec:
+  pvcSelector: busybox-cephfs
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: ocs-external-storagecluster-cephfs
+  resources:
+    requests:
+      storage: 5Gi
