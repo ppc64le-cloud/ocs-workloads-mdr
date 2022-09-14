@@ -1,0 +1,17 @@
+---
+apiVersion: ramendr.openshift.io/v1alpha1
+kind: DRPlacementControl
+metadata:
+  labels:
+    app: busybox
+  name: test-busybox-drpc-2
+spec:
+  drPolicyRef:
+    name: odr-policy
+  placementRef:
+    kind: PlacementRule
+    name: busybox-placement
+  preferredCluster: akrai-a20-c2
+  pvcSelector:
+    matchLabels:
+      appname: busybox
