@@ -1,5 +1,6 @@
 ---
 resources:
+- namespace.yaml
 - drpc.yaml
 - placement-rule.yaml
 - busybox-rbd-pvc.yaml
