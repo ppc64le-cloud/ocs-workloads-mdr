@@ -1,6 +1,0 @@
----
-resources:
-- namespace.yaml
-- channel.yaml
-- drpc.yaml
-- placement-rule.yaml

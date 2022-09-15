@@ -3,24 +3,24 @@ kind: Deployment
 metadata:
   labels:
     appname: busybox
-  name: busybox-cephfs
-  namespace: busybox-workload
+  name: busybox-rbd
+  namespace: busybox-sample
 spec:
   selector:
     matchLabels:
-      workload: busybox-cephfs
+      workload: busybox-rbd
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        workload: busybox-cephfs
+        workload: busybox-rbd
     spec:
       containers:
       - command: ["/bin/sh", "-c"]
         args:
-          - wget "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.tar.xz" && \ 
-            tar -xvf linux-4.14.tar.xz 
+          - wget "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.tar.xz" && \
+            tar -xvf linux-4.14.tar.xz
         image: quay.io/vcppds7878/busybox:latest
         imagePullPolicy: IfNotPresent
         name: busybox
@@ -30,5 +30,5 @@ spec:
       volumes:
       - name: mypvc
         persistentVolumeClaim:
-          claimName: busybox-cephfs-pvc
+          claimName: busybox-rbd-pvc
           readOnly: false

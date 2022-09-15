@@ -1,0 +1,4 @@
+---
+resources:
+- busybox-rbd-pvc.yaml
+- busybox-rbd-pod.yaml
