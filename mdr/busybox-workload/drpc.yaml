@@ -3,15 +3,16 @@ apiVersion: ramendr.openshift.io/v1alpha1
 kind: DRPlacementControl
 metadata:
   labels:
-    app: busybox
-  name: test-busybox-drpc-2
+    app: busybox-workload
+  name: busybox-drpc
+  namespace: busybox-workload
 spec:
   drPolicyRef:
     name: odr-policy
   placementRef:
     kind: PlacementRule
     name: busybox-placement
-  preferredCluster: akrai-a20-c2
+  preferredCluster: akrai-s14-c1
   pvcSelector:
     matchLabels:
       appname: busybox

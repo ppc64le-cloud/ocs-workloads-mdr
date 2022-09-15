@@ -4,6 +4,7 @@ metadata:
   labels:
     appname: busybox
   name: busybox-cephfs
+  namespace: busybox-workload
 spec:
   selector:
     matchLabels:
