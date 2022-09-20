@@ -1,4 +1,0 @@
----
-resources:
-- busybox-cephfs-pvc.yaml
-- busybox-cephfs-pod.yaml
