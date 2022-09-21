@@ -6,7 +6,7 @@ metadata:
   labels:
     app: busybox-sample
 spec:
-  preferredCluster: "cluster1"
+  preferredCluster: "akrai-s19-c1"
   drPolicyRef:
     name: odr-policy
   placementRef:
