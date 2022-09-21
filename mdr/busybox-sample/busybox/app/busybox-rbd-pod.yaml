@@ -17,7 +17,10 @@ spec:
         workload: busybox-rbd
     spec:
       containers:
-      - command: ["/bin/sh", "-c", 'wget "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.tar.xz"; tar -xvf linux-4.14.tar.xz']
+      - command: ["/bin/sh", "-c"]
+        args:
+        - wget "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.tar.xz" -O /mnt/test/; 
+          tar -xvf linux-4.14.tar.xz -O /mnt/test/
         image: quay.io/vcppds7878/busybox:latest
         imagePullPolicy: IfNotPresent
         name: busybox
