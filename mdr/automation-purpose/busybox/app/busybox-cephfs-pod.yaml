@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    appname: busybox-cephfs
+    appname: busybox
   name: busybox-cephfs
+  namespace: busybox-sample
 spec:
   selector:
     matchLabels:
