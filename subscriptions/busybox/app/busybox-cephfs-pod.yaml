@@ -19,10 +19,8 @@ spec:
       containers:
       - command: ["/bin/sh", "-c"]
         args:
-          - wget  https://raw.githubusercontent.com/red-hat-storage/ocs-workloads/master/rdr/busybox/scripts/kernel_untar.sh -O /mnt/test/kernel_untar.sh;
-            wget https://raw.githubusercontent.com/red-hat-storage/ocs-workloads/master/rdr/busybox/scripts/kernel_untar_integrity_check.sh  -O /mnt/test/kernel_untar_integrity_check.sh;
-            chmod +x /mnt/test/kernel_untar.sh; chmod +x /mnt/test/kernel_untar_integrity_check.sh;
-            /mnt/test/kernel_untar.sh
+          - wget  https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.280.tar.gz -O /mnt/test/linux-4.14.280.tar.gz;
+            tar xfz /mnt/test/linux-4.14.280.tar.gz
         image: quay.io/ocsci/rdr-ocs-workload
         imagePullPolicy: IfNotPresent
         name: busybox
