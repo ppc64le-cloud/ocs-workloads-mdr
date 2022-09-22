@@ -3,8 +3,9 @@ apiVersion: ramendr.openshift.io/v1alpha1
 kind: DRPlacementControl
 metadata:
   name: busybox-drpc
+  namespace: test-app
   labels:
-    app: busybox-sample
+    app: test-app
 spec:
   preferredCluster: "akrai-s19-c1"
   drPolicyRef:

@@ -3,8 +3,9 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: busybox-placement
+  namespace: test-app
   labels:
-    app: busybox-sample
+    app: test-app
 spec:
   clusterConditions:
     - type: ManagedClusterConditionAvailable

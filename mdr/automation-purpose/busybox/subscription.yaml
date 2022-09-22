@@ -6,8 +6,9 @@ metadata:
     apps.open-cluster-management.io/github-branch: master
     apps.open-cluster-management.io/github-path: mdr/busybox-sample/busybox/app
   labels:
-    app: busybox-sample
+    app: test-app
   name: busybox-sub
+  namespace: test-app
 spec:
     channel: ramen-samples/ramen-gitops
     placement:
