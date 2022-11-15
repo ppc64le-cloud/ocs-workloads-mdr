@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: busybox-cephfs-pvc
   labels:
-    appname: busybox-cephfs
+    appname: busybox-app-1
 spec:
   accessModes:
   - ReadWriteOnce
