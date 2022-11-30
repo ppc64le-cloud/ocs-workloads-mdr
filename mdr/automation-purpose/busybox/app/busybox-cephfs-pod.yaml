@@ -4,7 +4,7 @@ metadata:
   labels:
     appname: busybox
   name: busybox-cephfs
-  namespace: test-app
+  namespace: busybox-sample
 spec:
   selector:
     matchLabels:

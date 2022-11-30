@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: busybox-cephfs-pvc
-  namespace: test-app  
+  namespace: busybox-sample
   labels:
     appname: busybox
 spec:

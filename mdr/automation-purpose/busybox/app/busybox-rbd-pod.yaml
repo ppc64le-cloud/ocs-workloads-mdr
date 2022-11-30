@@ -4,8 +4,8 @@ metadata:
   labels:
     appname: busybox
   name: busybox-rbd
-  namespace: test-app
-  spec:
+  namespace: busybox-sample
+spec:
   selector:
     matchLabels:
       workload: busybox-rbd
