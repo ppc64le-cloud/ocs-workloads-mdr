@@ -30,7 +30,7 @@ spec:
         spec:
           containers:
           - name: hello
-            image: busybox
+            image: quay.io/vcppds7878/busybox:latest
             args:
             - /bin/sh
             - -c
