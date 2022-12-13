@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: hello-world
+  name: hello-world-rbd
   labels:
     appname: hello-world
 spec:
@@ -16,7 +16,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hello-world-job
+  name: hello-world-job-rbd
 spec:
   schedule: "*/1 * * * *"
   concurrencyPolicy: Allow
@@ -42,5 +42,5 @@ spec:
       volumes:
       - name: mypvc
         persistentVolumeClaim:
-          claimName: hello-world
+          claimName: hello-world-rbd
           readOnly: false
