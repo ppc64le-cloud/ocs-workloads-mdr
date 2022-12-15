@@ -14,7 +14,7 @@ spec:
         workload : mysql
     spec:
       containers:
-      - image: quay.io/prsurve/mysql:latest
+      - image: registry.redhat.io/rhel8/mysql-80
         name: mysql
         env:
           # Use secret in real usage

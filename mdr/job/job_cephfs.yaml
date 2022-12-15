@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: counter
-        image: centos:7
+        image: centos:latest
         command:
          - "bin/bash"
          - "-c"
