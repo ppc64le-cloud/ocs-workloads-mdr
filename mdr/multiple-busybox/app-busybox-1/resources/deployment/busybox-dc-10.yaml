@@ -21,7 +21,7 @@ spec:
           - wget  https://raw.githubusercontent.com/red-hat-storage/ocs-workloads/io-pattern-busybox/rdr/busybox/scripts/simple_io.sh -O /mnt/test/simple_io.sh;
             chmod +x /mnt/test/simple_io.sh;
             /mnt/test/simple_io.sh
-        image: docker.io/ppc64le/busybox:latest
+        image: quay.io/ocsci/busybox
         imagePullPolicy: IfNotPresent
         name: busybox
         volumeMounts:
